@@ -18,5 +18,6 @@ FROM eclipse-temurin:17-jre-alpine
 
 COPY --from=0 ./target/*.jar sheet-media.jar
 
+ARG SPRING_ARGS
 EXPOSE 42069
-ENTRYPOINT ["java", "-jar", "sheet-media.jar"]
+ENTRYPOINT java -jar sheet-media.jar $SPRING_ARGS
